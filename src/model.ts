@@ -53,24 +53,24 @@ export const loadModel = (url: string, scene: THREE.Scene): THREE.Object3D => {
 };
 
 // 3Dモデルのサイズ調整
-const adjustModelScale = (
-  model: THREE.Object3D,
-  camera: THREE.PerspectiveCamera
-): THREE.Object3D => {
-  const targetHeight: number = 10;
-  const boundingBox: THREE.Box3 = new THREE.Box3().setFromObject(model);
-  const size: THREE.Vector3 = new THREE.Vector3();
-  boundingBox.getSize(size);
+// const adjustModelScale = (
+//   model: THREE.Object3D,
+//   camera: THREE.PerspectiveCamera
+// ): THREE.Object3D => {
+//   const targetHeight: number = 10;
+//   const boundingBox: THREE.Box3 = new THREE.Box3().setFromObject(model);
+//   const size: THREE.Vector3 = new THREE.Vector3();
+//   boundingBox.getSize(size);
 
-  const height: number = size.y;
-  const scale: number = height > 0 ? targetHeight / height : 1;
+//   const height: number = size.y;
+//   const scale: number = height > 0 ? targetHeight / height : 1;
 
-  model.scale.set(scale, scale, scale);
+//   model.scale.set(scale, scale, scale);
 
-  camera.position.set(0, targetHeight / 2, targetHeight * 2);
-  camera.lookAt(0, targetHeight / 2, 0);
-  return model;
-};
+//   camera.position.set(0, targetHeight / 2, targetHeight * 2);
+//   camera.lookAt(0, targetHeight / 2, 0);
+//   return model;
+// };
 
 // 3Dオブジェクト（ボックス）の作成
 export const createBox = () => {
